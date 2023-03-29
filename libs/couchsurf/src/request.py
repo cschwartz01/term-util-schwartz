@@ -82,7 +82,7 @@ class Request:
         confirmation = json.loads(response.text)
         if "attachment" in kwargs:
             with open(kwargs["attachment"], 'rb') as fh:
-                updated_doc["_attachments"] = {
+                doc["_attachments"] = {
                     f'{kwargs["attachment"]}': {
                         "data": base64.b64encode(
                             fh.read()
