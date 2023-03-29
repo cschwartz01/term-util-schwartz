@@ -95,7 +95,7 @@ class Request:
             response = requests.put(
                 request_uri,
                 headers = self.headers,
-                data = json.dumps(updated_doc["_attachments"][kwargs["attachment"]]["data"])
+                data = json.dumps(doc["_attachments"][kwargs["attachment"]]["data"])
             )
             confirmation = json.loads(response.text)
         return confirmation
